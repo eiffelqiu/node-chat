@@ -7,6 +7,7 @@ node chat with socket.io
 
 Node.js # http://nodejs.org/ 
 
+![Screen Shot](screen.png "Screen Shot")
 
 ### Usage  
 
