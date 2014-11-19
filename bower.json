@@ -1,0 +1,12 @@
+{
+  "name": "node-chat",
+  "version": "0.0.0",
+  "homepage": "https://github.com/eiffelqiu/node-chat",
+  "authors": [
+    "eiffel qiu <eiffelqiu@qq.com>"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "jquery": "~2.1.1"
+  }
+}
