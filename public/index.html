@@ -2,6 +2,9 @@
 
 <head>
 <title>Chat Example</title>
+<link href="/css/bootstrap.min.css" rel="stylesheet">
+
+<script type="text/css" src="/js/bootstrap/dist/js/bootstrap.min.js"></script>
 <script src="/js/socket.io-client/socket.io.js"></script>
 <script src="/js/jquery/dist/jquery.min.js"></script>
 
@@ -31,13 +34,17 @@ $(function() {
 </head>
 
 <body>
-<h1>Simple Chat</h1>
-<p>
-<input id="nickText" type="text" placeholder="Your Nickname" />
-<button id="nick">Set Nickname</button>
-</p>
-<textarea style="height:300px;width:500px;"></textarea>
-<p>
+ 
+
+<div class="alert alert-success" role="alert">
+  <strong>Simple Chat!</strong>  
+</div>
+ 
+<input id="nickText" type="text" placeholder="Your Nickname" /> <button id="nick">Set Nickname</button><br/>
+<hr/>
+
+<textarea style="height:300px;width:500px;"></textarea><p/>
+<hr/>
 <input id="chatText" type="text" />
 <button id="chat">Send</button>
 </p>
