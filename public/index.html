@@ -1,53 +1,33 @@
-<html>
-
+<html ng-app="chatApp">
 <head>
-<title>Chat Example</title>
+<meta charset="utf-8" />
+<title>Simple Chat!</title>
 <link href="/css/bootstrap.min.css" rel="stylesheet">
-
-<script type="text/css" src="/js/bootstrap/dist/js/bootstrap.min.js"></script>
-<script src="/js/socket.io-client/socket.io.js"></script>
-<script src="/js/jquery/dist/jquery.min.js"></script>
-
-<script>
-var socket = io.connect();
-
-socket.on('chat', function(data) {
-	var msg = data.nick + ': ' + data.message;
-	$('textarea').val($('textarea').val() + msg + '\n');
-});
-
-// Handle UI
-$(function() {
-	// Set nickname
-	$('#nick').on('click', function() {
-		socket.emit('nick', $('#nickText').val());
-	});
-
-	// Send chat message
-	$('#chat').on('click', function() {
-		socket.emit('chat', {
-			message: $('#chatText').val()
-		});
-	});
-});
-</script>
 </head>
 
-<body>
- 
+<body ng-controller="MainController">
 
 <div class="alert alert-success" role="alert">
   <strong>Simple Chat!</strong>  
 </div>
  
-<input id="nickText" type="text" placeholder="Your Nickname" /> <button id="nick">Set Nickname</button><br/>
+<input id="nickText" type="text" placeholder="Your Nickname" /> &nbsp;&nbsp; <button id="nick">Set Nickname</button>
 <hr/>
+<textarea style="height:300px;width:90%;"  readonly="readonly"></textarea><p/>
 
-<textarea style="height:300px;width:500px;"></textarea><p/>
+
 <hr/>
-<input id="chatText" type="text" />
-<button id="chat">Send</button>
-</p>
+<input id="chatText" type="text" placeholder="Your Message" />&nbsp;&nbsp; <button id="chat">Send</button>
+
+<div class="alert alert-success" role="alert">
+  <strong>{{message}}</strong>  
+</div>
+
+<script type="text/css" src="/js/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="/js/socket.io-client/socket.io.js"></script>
+<script src="/js/jquery/dist/jquery.min.js"></script>
+<script src="/js/angular/angular.min.js"></script>
+<script src="/app/main.js"></script>
+
 </body>
-
 </html>
